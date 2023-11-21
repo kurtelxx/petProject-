@@ -1,16 +1,14 @@
 import React from 'react';
 import './Profile.module.css'
-import MyPosts from './MyPosts/MyPosts';
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
-import {updateNewPostText} from "../../redux/store";
+import MyPostsContainer from "./MyPosts/Post/MyPostsContainer";
 
 const Profile = (props) => {
 
     return (
         <div>
             <ProfileInfo/>
-            <MyPosts posts={props.profilePage.posts} newPostText={props.profilePage.newPostText}
-                     addPost={props.addPost} dispatch={props.dispatch} />
+            <MyPostsContainer/>
         </div>
     )
 }

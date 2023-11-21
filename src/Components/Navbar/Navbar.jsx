@@ -6,10 +6,10 @@ const Navbar = () => {
     return (
         <nav className={s.nav}>
             <div>
-                <NavLink to='/Profile' className = { navData => navData.isActive ? s.active : s.item }>Profile</NavLink>
+                <NavLink to='/profile' className = { navData => navData.isActive ? s.active : s.item }>Profile</NavLink>
             </div>
             <div>
-                <NavLink to='/Dialogs' className = { navData => navData.isActive ? s.active : s.item } >Message</NavLink>
+                <NavLink to='/dialogs' className = { navData => navData.isActive ? s.active : s.item } >Message</NavLink>
             </div>
             <div className={s.item}>
                 <NavLink>News</NavLink>

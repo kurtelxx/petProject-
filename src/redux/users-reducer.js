@@ -20,7 +20,7 @@ const usersReducer = (state = initialState, action) => {
                     if (u.id === action.userId) {
                         return {...u, followed: true}
                     }
-                    return u;
+                    return u
                 })
             }
         case UNFOLLOW:
@@ -30,7 +30,7 @@ const usersReducer = (state = initialState, action) => {
                     if (u.id === action.userId) {
                         return {...u, followed: false}
                     }
-                    return u;
+                    return u
                 })
             }
         case SET_USERS: {
@@ -43,7 +43,7 @@ const usersReducer = (state = initialState, action) => {
             return { ...state, totalUsersCount: action.count}
         }
         default:
-            return state;
+            return state
     }
 }
 

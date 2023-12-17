@@ -4,16 +4,20 @@ import {connect} from "react-redux";
 import {getStatus, getUserProfile, updateStatus,} from "../../redux/profile-reducer";
 import withRouter from './withRouter'
 import {compose} from "redux";
+import {useNavigate} from "react-router-dom";
 
 class ProfileContainer extends React.Component {
 
     componentDidMount() {
         let userId = this.props.params.userId
         if (!userId) {
-            userId = this.props.authorizedUserId
+            userId = this.props.authorizedUserId;
+            if (!userId) {
+                this.props.history.navigate("/login");
+            }
         }
-        userId && this.props.getUserProfile(userId)
-        this.props.getStatus(userId)
+        userId && this.props.getUserProfile(userId);
+        this.props.getStatus(userId);
     }
 
     render() {
@@ -32,4 +36,3 @@ export default compose(
     connect(mapStateToProps, {getUserProfile, getStatus, updateStatus}),
     withRouter
 )(ProfileContainer)
-
